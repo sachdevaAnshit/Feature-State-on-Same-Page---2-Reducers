@@ -1,0 +1,31 @@
+<p>Feature State Example with two independent sections</p>
+
+<p (click)="changeToPart('PART1')" class="partsTiles">Part 1</p>
+<p (click)="changeToPart('PART2')" class="partsTiles">Part 2</p>
+
+<div class="clear"></div>
+
+<div *ngIf="sectionToShow == 'PART1'">
+  <p>Part 1 Content - From StateModule</p>
+  <button (click)="decrement()">Decrement</button>
+    <p>{{counter}}</p>
+  <button (click)="increment()">Increment</button>
+  <br/>
+  <button (click)="removeString()">Decrement</button>
+    <p>{{name}}</p>
+  <button (click)="addString()">Increment</button>
+</div>
+
+<div *ngIf="sectionToShow == 'PART2'">
+  <p>Part 2 Content - From Part2StateModule</p>
+  
+  <p>Goal - {{ this.home + this.away }}</p>
+  <div class="clear"></div>
+  <button (click)="decreaseHomeGoal()">Decrement</button>
+    <p>Home - {{this.home}}</p>
+  <button (click)="increaseHomeGoal()">Increment</button>
+  <br/>
+  <button (click)="decreaseAwayGoal()">Decrement</button>
+    <p>Away - {{this.away}}</p>
+  <button (click)="increaseAwayGoal()">Increment</button>
+</div>
